@@ -17,19 +17,19 @@
     --card-hover: 0 0% 98%;
 
     /* Primary brand colors */
-    --primary: 27 35% 32%;
+    --primary: 210 50% 45%;
     --primary-foreground: 0 0% 98%;
-    --primary-hover: 27 35% 28%;
+    --primary-hover: 210 50% 40%;
 
     /* Secondary colors */
-    --secondary: 27 20% 88%;
-    --secondary-foreground: 210 10% 15%;
-    --secondary-hover: 27 20% 85%;
+    --secondary: 210 20% 90%;
+    --secondary-foreground: 0 0% 10%;
+    --secondary-hover: 210 20% 85%;
 
     /* Accent colors */
-    --accent: 27 35% 32%;
+    --accent: 210 50% 45%;
     --accent-foreground: 0 0% 98%;
-    --accent-hover: 27 35% 28%;
+    --accent-hover: 210 50% 40%;
 
     /* Muted colors */
     --muted: 27 15% 92%;
@@ -40,17 +40,17 @@
     --destructive-foreground: 0 0% 98%;
 
     /* Border and input */
-    --border: 27 15% 88%;
-    --input: 27 15% 90%;
-    --ring: 27 35% 32%;
+    --border: 210 15% 88%;
+    --input: 210 15% 90%;
+    --ring: 210 50% 45%;
 
     --radius: 0.75rem;
 
     /* Portfolio specific colors */
     --hero-overlay: 0 0% 0% / 0.4;
-    --timeline-line: 0 0% 85%;
-    --tag-bg: 27 35% 32% / 0.1;
-    --tag-text: 27 35% 25%;
+    --timeline-line: 210 15% 85%;
+    --tag-bg: 210 50% 45% / 0.1;
+    --tag-text: 210 50% 25%;
     
     /* Shadows */
     --shadow-sm: 0 2px 4px hsl(210 10% 15% / 0.05);
@@ -72,29 +72,29 @@
     --card-foreground: 0 0% 95%;
     --card-hover: 210 12% 14%;
     
-    --primary: 27 45% 55%;
-    --primary-foreground: 210 15% 8%;
-    --primary-hover: 27 45% 60%;
+    --primary: 210 60% 60%;
+    --primary-foreground: 0 0% 5%;
+    --primary-hover: 210 60% 65%;
     
     --secondary: 210 12% 16%;
     --secondary-foreground: 0 0% 90%;
     --secondary-hover: 210 12% 18%;
     
-    --accent: 27 45% 55%;
-    --accent-foreground: 210 15% 8%;
-    --accent-hover: 27 45% 60%;
+    --accent: 210 60% 60%;
+    --accent-foreground: 0 0% 5%;
+    --accent-hover: 210 60% 65%;
     
     --muted: 210 12% 14%;
     --muted-foreground: 0 0% 65%;
     
     --border: 210 12% 18%;
     --input: 210 12% 16%;
-    --ring: 27 45% 55%;
+    --ring: 210 60% 60%;
     
     --hero-overlay: 210 15% 8% / 0.8;
-    --timeline-line: 27 25% 35%;
-    --tag-bg: 27 45% 55% / 0.2;
-    --tag-text: 27 45% 70%;
+    --timeline-line: 210 25% 35%;
+    --tag-bg: 210 60% 60% / 0.2;
+    --tag-text: 210 60% 70%;
   }
 }
 
