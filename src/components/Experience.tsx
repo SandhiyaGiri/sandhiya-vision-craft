@@ -6,7 +6,7 @@ const experiences = [
     role: 'Data Scientist',
     company: '5C Network',
     period: 'June 2025 - Present',
-    location: 'Remote',
+    location: 'Bangalore, India',
     description: 'Built and deployed fracture detection pipelines with cutting-edge vision frameworks and architectures, integrated expert validation and ensembling, and automated AI observability on GCP.',
     highlights: [
       'Developed multi-class fracture detection models covering 38+ classes',
@@ -19,7 +19,7 @@ const experiences = [
     role: 'Data Science Intern',
     company: '5C Network',
     period: 'Jan 2025 - May 2025',
-    location: 'Remote',
+    location: 'Bangalore, India',
     description: 'Developed advanced medical AI models for radiograph analysis, including vision-language systems, while optimizing deep learning performance across PyTorch, JAX, and TensorFlow.',
     highlights: [
       'Built vision-language models for radiology',
@@ -46,7 +46,7 @@ const experiences = [
     company: 'Halliburton',
     period: 'April 2024 - May 2024',
     location: 'Bangalore, India',
-    description: 'Explored Bangalore and completed the project "Intelligent PDF querying using RAG with graph-based retrieval."',
+    description: 'Developed an intelligent document querying system using RAG with graph-based retrieval for efficient information extraction from technical PDFs.',
     highlights: [
       'Built intelligent document querying system',
       'Implemented RAG with graph-based retrieval',
@@ -146,6 +146,9 @@ const Experience = () => {
               <h4 className="text-xl font-heading font-bold text-foreground mb-2">
                 Bachelor of Engineering in Electronics and Communication
               </h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                with minor degree in Data Science and Data Analytics
+              </p>
               <h5 className="text-lg font-medium text-accent mb-2">
                 Government College of Technology, Coimbatore
               </h5>
@@ -155,11 +158,11 @@ const Experience = () => {
                   2021 - 2025
                 </div>
                 <div>
-                  CGPA: 8.55
+                  CGPA: 8.35
                 </div>
               </div>
               <p className="text-muted-foreground italic">
-                "A place that made me realize how big the world is and where I actually stand right now."
+                "A place that showed me the true scale of the world, my place within it, and of course, some engineering along the way."
               </p>
             </div>
           </Card>

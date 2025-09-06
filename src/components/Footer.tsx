@@ -7,9 +7,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           {/* Copyright */}
           <div className="flex items-center space-x-2 text-muted-foreground">
-            <span>© 2025 Sandhiya C V. Built with</span>
-            <Heart className="w-4 h-4 text-red-500 fill-current" />
-            <span>and AI.</span>
+            <span>© 2025 Sandhiya C V</span>
           </div>
 
           {/* Quick Links */}

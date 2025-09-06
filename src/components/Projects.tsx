@@ -153,7 +153,6 @@ const Projects = () => {
 
                 {/* Tech Stack */}
                 <div className="mb-4">
-                  <h4 className="text-sm font-medium text-foreground mb-2">Tech Stack:</h4>
                   <div className="flex flex-wrap gap-1">
                     {project.techStack.slice(0, 3).map((tech) => (
                       <span
@@ -173,12 +172,8 @@ const Projects = () => {
 
                 {/* Why I built it */}
                 <div className="mb-4">
-                  <h4 className="text-sm font-medium text-foreground mb-2">Why I built it:</h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    {project.why.length > 120 
-                      ? `${project.why.substring(0, 120)}...` 
-                      : project.why
-                    }
+                    {project.why}
                   </p>
                 </div>
 
