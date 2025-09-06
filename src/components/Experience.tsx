@@ -7,11 +7,11 @@ const experiences = [
     company: '5C Network',
     period: 'June 2025 - Present',
     location: 'Bangalore, India',
-    description: 'Built and deployed fracture detection pipelines with cutting-edge vision frameworks and architectures, integrated expert validation and ensembling, and automated AI observability on GCP.',
+    description: 'Built and deployed fracture detection pipelines with cutting-edge vision frameworks and architectures, integrated expert validation and ensembling',
     highlights: [
-      'Developed multi-class fracture detection models covering 38+ classes',
-      'Implemented expert validation workflows',
-      'Automated AI observability on Google Cloud Platform',
+      'Developed multi-class fracture detection models covering 5+ targetclasses',
+      'Implemented expert validation workflows via Lable studio',
+      'Automated AI observability using n8n',
       'Enhanced model performance with ensemble techniques'
     ]
   },
