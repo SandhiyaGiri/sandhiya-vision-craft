@@ -35,17 +35,10 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <div className="fade-in">
-          <div className="mb-6">
-            <span className="text-5xl sm:text-6xl lg:text-7xl">👋</span>
-          </div>
-          
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-white mb-6 leading-tight">
-            Hi, I'm{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-400">
-              Sandhiya
+              Sandhiya C V
             </span>
-            <br />
-            AI Scientist
           </h1>
           
           <p className="text-xl sm:text-2xl lg:text-3xl text-gray-200 mb-8 font-light leading-relaxed fade-in-delay-1">

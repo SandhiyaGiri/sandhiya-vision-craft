@@ -6,10 +6,10 @@
 
 @layer base {
   :root {
-    /* Background gradient from light grey to soft brown */
-    --background: 0 0% 96%;
-    --background-gradient: linear-gradient(135deg, hsl(0 0% 96%) 0%, hsl(27 20% 83%) 100%);
-    --foreground: 210 10% 15%;
+    /* Simple white/grey backgrounds */
+    --background: 0 0% 100%;
+    --background-gradient: hsl(0 0% 100%);
+    --foreground: 0 0% 15%;
 
     /* Card styling */
     --card: 0 0% 100%;
@@ -47,8 +47,8 @@
     --radius: 0.75rem;
 
     /* Portfolio specific colors */
-    --hero-overlay: 210 10% 15% / 0.7;
-    --timeline-line: 27 25% 75%;
+    --hero-overlay: 0 0% 0% / 0.4;
+    --timeline-line: 0 0% 85%;
     --tag-bg: 27 35% 32% / 0.1;
     --tag-text: 27 35% 25%;
     
@@ -64,8 +64,8 @@
   }
 
   .dark {
-    --background: 210 15% 8%;
-    --background-gradient: linear-gradient(135deg, hsl(210 15% 8%) 0%, hsl(27 20% 12%) 100%);
+    --background: 0 0% 10%;
+    --background-gradient: hsl(0 0% 10%);
     --foreground: 0 0% 95%;
     
     --card: 210 12% 12%;
@@ -104,8 +104,7 @@
   }
 
   body {
-    @apply text-foreground font-light leading-relaxed;
-    background: var(--background-gradient);
+    @apply text-foreground font-light leading-relaxed bg-background;
     min-height: 100vh;
   }
 
