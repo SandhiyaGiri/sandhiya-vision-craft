@@ -14,27 +14,28 @@ const Footer = () => {
           <div className="flex items-center space-x-6">
             <a
               href="#about"
-              className="text-muted-foreground hover:text-accent transition-colors text-sm"
+              className="text-muted-foreground hover:text-accent transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded-sm px-1"
             >
               About
             </a>
             <a
               href="#projects"
-              className="text-muted-foreground hover:text-accent transition-colors text-sm"
+              className="text-muted-foreground hover:text-accent transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded-sm px-1"
             >
-              Projects
+              Featured Projects
             </a>
             <a
               href="#contact"
-              className="text-muted-foreground hover:text-accent transition-colors text-sm"
+              className="text-muted-foreground hover:text-accent transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded-sm px-1"
             >
-              Contact
+              Let's Work Together
             </a>
             <a
               href="https://www.linkedin.com/in/sandhiya-c-v"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-accent transition-colors text-sm"
+              className="text-muted-foreground hover:text-accent transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded-sm px-1"
+              aria-label="Visit Sandhiya's LinkedIn profile"
             >
               LinkedIn
             </a>

@@ -11,7 +11,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8" aria-labelledby="about-heading">
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Profile Image */}
@@ -32,14 +32,13 @@ const About = () => {
 
           {/* Content */}
           <div className="fade-in-delay-1">
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-6">
+            <h2 id="about-heading" className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-6">
               About Me
             </h2>
             
             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed mb-8">
               <p>
-                AI Engineer with a strong interest in cutting-edge technologies and the startup ecosystem. 
-                Quick learner, currently focused on developing vision and vision-language models for medical imaging.
+                AI Scientist at 5C Network, specializing in developing vision and vision-language models for radiographic images, as well as medical imaging modalities such as CT, MRI, and X-ray. I have hands-on experience in building and deploying models for classification, detection, and segmentation tasks. Alongside my professional work, I also pursue hobby projects in agentic AI, workflow automation, and web development.
               </p>
             </div>
 

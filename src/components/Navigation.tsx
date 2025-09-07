@@ -5,10 +5,26 @@ import { Download, ExternalLink, Menu, X } from 'lucide-react';
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('about');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      
+      // Update active section based on scroll position
+      const sections = navLinks.map(link => link.href.substring(1));
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+      
+      if (currentSection) {
+        setActiveSection(currentSection);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -17,9 +33,12 @@ const Navigation = () => {
 
   const navLinks = [
     { href: '#about', label: 'About' },
+    { href: '#projects', label: 'Featured Projects' },
     { href: '#experience', label: 'Experience' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#contact', label: 'Contact' },
+    { href: '#tech-stack', label: 'Tech Stack' },
+    { href: '#architectures', label: 'Architectures' },
+    { href: '#certifications', label: 'Certifications' },
+    { href: '#contact', label: 'Let\'s Work Together' },
   ];
 
   const handleDownloadResume = () => {
@@ -31,13 +50,22 @@ const Navigation = () => {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-card/95 backdrop-blur-sm shadow-portfolio-md'
-          : 'bg-transparent'
-      }`}
-    >
+    <>
+      {/* Skip to content link for accessibility */}
+      <a
+        href="#about"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 bg-accent text-accent-foreground px-4 py-2 rounded-md font-medium hover:bg-accent-hover transition-colors"
+      >
+        Skip to content
+      </a>
+      
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? 'bg-card/95 backdrop-blur-sm shadow-portfolio-md'
+            : 'bg-transparent'
+        }`}
+      >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -49,15 +77,23 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="nav-link text-foreground hover:text-accent font-medium transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const sectionId = link.href.substring(1);
+              const isActive = activeSection === sectionId;
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`nav-link font-medium transition-colors ${
+                    isActive 
+                      ? 'text-accent font-semibold' 
+                      : 'text-foreground hover:text-accent'
+                  }`}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
             
             <div className="flex items-center space-x-3">
               <Button
@@ -151,6 +187,7 @@ const Navigation = () => {
         )}
       </div>
     </nav>
+    </>
   );
 };
 

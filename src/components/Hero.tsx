@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronDown } from 'lucide-react';
-import heroBackground from '@/assets/hero-background.jpg';
+import { ChevronDown, Download } from 'lucide-react';
 
 const Hero = () => {
   const [offsetY, setOffsetY] = useState(0);
@@ -15,52 +14,61 @@ const Hero = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleDownloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/resume-sandhiya-cv.pdf';
+    link.download = 'Sandhiya_CV_Resume.pdf';
+    link.click();
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Parallax Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${heroBackground})`,
-          transform: `translateY(${offsetY * 0.5}px)`,
-        }}
-      />
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
+      
+      {/* Animated Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.3),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(120,119,198,0.2),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(120,119,198,0.2),transparent_50%)]" />
+      </div>
       
       {/* Overlay */}
-      <div 
-        className="absolute inset-0"
-        style={{ background: 'var(--hero-overlay)' }}
-      />
+      <div className="absolute inset-0 bg-black/20" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <div className="fade-in">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-white mb-6 leading-tight">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold text-white mb-8 leading-tight">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-400">
               Sandhiya C V
             </span>
           </h1>
           
-          <p className="text-xl sm:text-2xl lg:text-3xl text-gray-200 mb-8 font-light leading-relaxed fade-in-delay-1">
-            Building intelligent systems that bridge AI and the real world
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl text-gray-200 mb-6 font-semibold leading-relaxed fade-in-delay-1">
+            AI Scientist & Computer Vision Expert
+          </h2>
+          
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-12 font-light leading-relaxed max-w-3xl mx-auto fade-in-delay-1">
+            Specializing in medical imaging, vision-language models, and building intelligent systems that bridge AI and healthcare
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in-delay-2">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center fade-in-delay-2">
             <Button
               size="lg"
-              className="bg-accent hover:bg-accent-hover text-accent-foreground px-8 py-3 text-lg font-medium hover-lift"
+              className="bg-accent hover:bg-accent-hover text-accent-foreground px-10 py-4 text-lg font-semibold hover-lift min-w-[180px]"
               asChild
             >
-              <a href="#projects">View My Work</a>
+              <a href="#projects">View Projects</a>
             </Button>
             
             <Button
-              variant="outline"
+              onClick={handleDownloadResume}
               size="lg"
-              className="border-white/30 text-white hover:bg-white hover:text-foreground px-8 py-3 text-lg font-medium hover-lift"
-              asChild
+              className="border-white/30 text-white hover:bg-white hover:text-foreground px-10 py-4 text-lg font-semibold hover-lift min-w-[180px]"
             >
-              <a href="#contact">Get In Touch</a>
+              <Download className="w-5 h-5 mr-2" />
+              Download Resume
             </Button>
           </div>
         </div>

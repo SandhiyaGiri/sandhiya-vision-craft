@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, Stethoscope, Brain, FileText, BarChart3, MessageSquare, Eye } from 'lucide-react';
 
 const projects = [
   {
@@ -11,7 +11,10 @@ const projects = [
     techStack: ['PyTorch', 'YOLOv8/v11', 'Detectron2', 'RF-DETR', 'Faster R-CNN', 'CLAHE', 'LabelStudio', 'GCP', 'n8n'],
     why: 'Developed multi-class fracture detection models on annotated X-ray datasets (AXR, HIL) covering 38 fracture classes. Addressed the issue of view variation involved in Ankle Fracture detection and built each model specifically for different views.',
     tags: ['Computer Vision', 'Healthcare', 'Deep Learning'],
-    category: 'Healthcare'
+    category: 'Healthcare',
+    icon: Stethoscope,
+    outcome: '38 fracture classes detected',
+    color: 'from-red-500/20 to-red-600/20'
   },
   {
     title: 'Shoulder Fracture Detection',
@@ -20,7 +23,10 @@ const projects = [
     techStack: ['PyTorch', 'RF-DETR', 'MMDetection RTMDet', 'YOLO', 'Faster R-CNN'],
     why: 'Designed binary and multi-class models to distinguish normal and fracture cases in shoulder radiographs. RF-DETR Large outperformed baseline models with ~88% recall post human-in-loop validation.',
     tags: ['Computer Vision', 'Healthcare', 'AI'],
-    category: 'Healthcare'
+    category: 'Healthcare',
+    icon: Stethoscope,
+    outcome: '88% recall achieved',
+    color: 'from-blue-500/20 to-blue-600/20'
   },
   {
     title: 'Pleural Effusion Segmentation',
@@ -29,7 +35,10 @@ const projects = [
     techStack: ['PyTorch', 'MONAI', 'UNet', 'UNet++', 'Attention UNet', 'SwinUNETR', 'YOLO', 'TorchXRayVision'],
     why: 'Trained and compared 7 segmentation models on a dataset of 6,223 annotated images. YOLO and TorchXRayVision models demonstrated superior results due to pretraining on large-scale CXR datasets, highlighting the importance of domain-specific transfer learning.',
     tags: ['Computer Vision', 'Segmentation', 'Healthcare'],
-    category: 'Healthcare'
+    category: 'Healthcare',
+    icon: Eye,
+    outcome: '6,223 images processed',
+    color: 'from-green-500/20 to-green-600/20'
   },
   {
     title: 'Vision-Language Models for Radiology',
@@ -38,7 +47,10 @@ const projects = [
     techStack: ['PyTorch', 'JAX', 'TensorFlow', 'MONAI VILA V3', 'PaliGemma', 'MedGemma', 'BioMedCLIP', 'BioMedLM'],
     why: 'Built VLM pipelines aligning radiographs with reports for diagnostic support. Experimented with zero-shot inference, fine-tuned BioMedCLIP for classification (~83% accuracy), and trained models on 40k image-report pairs.',
     tags: ['LLM', 'Computer Vision', 'Healthcare', 'Multimodal'],
-    category: 'Research'
+    category: 'Research',
+    icon: Brain,
+    outcome: '83% accuracy achieved',
+    color: 'from-purple-500/20 to-purple-600/20'
   },
   {
     title: 'Q&A Retrieval System (Graph-based)',
@@ -47,7 +59,10 @@ const projects = [
     techStack: ['Neo4j', 'Cypher', 'ember-v1 embeddings', 'BM25', 'Reranker', 'Streamlit'],
     why: 'Developed a retrieval-augmented generation (RAG) system to query multi-PDF datasets. Built graph relationships between text chunks and entities for structured retrieval. Combined dense and sparse encoders with reranking.',
     tags: ['RAG', 'Graph DB', 'NLP'],
-    category: 'NLP'
+    category: 'NLP',
+    icon: FileText,
+    outcome: 'Multi-PDF RAG system',
+    color: 'from-orange-500/20 to-orange-600/20'
   },
   {
     title: 'Q&A Retrieval System (FAISS-based)',
@@ -56,7 +71,10 @@ const projects = [
     techStack: ['FAISS', 'Sentence Transformers', 'Mistral-7B', 'RAG'],
     why: 'Designed a scalable retrieval pipeline for unstructured PDFs. Stored embeddings in FAISS for efficient similarity search and clustering. Integrated Mistral-7B for response generation.',
     tags: ['RAG', 'LLM', 'NLP'],
-    category: 'NLP'
+    category: 'NLP',
+    icon: FileText,
+    outcome: 'Scalable retrieval pipeline',
+    color: 'from-indigo-500/20 to-indigo-600/20'
   },
   {
     title: 'Customer Review Intelligence',
@@ -65,7 +83,10 @@ const projects = [
     techStack: ['spaCy', 'Transformers', 'FastAPI'],
     why: 'Built before GenAI hype to mine customer reviews for sentiment, entities, and CX issues. Provided actionable insights for product improvement and customer experience enhancement.',
     tags: ['NLP', 'Analytics', 'Sentiment Analysis'],
-    category: 'Analytics'
+    category: 'Analytics',
+    icon: BarChart3,
+    outcome: 'Actionable CX insights',
+    color: 'from-teal-500/20 to-teal-600/20'
   },
   {
     title: 'Sentiment Analysis',
@@ -74,7 +95,10 @@ const projects = [
     techStack: ['Python', 'NLP', 'Scikit-learn', 'IMDB dataset'],
     why: 'Trained a Naive Bayes classifier on IMDB 50k dataset, achieving 85.7% accuracy. Applied text preprocessing and serialized the trained model for reusability on newly scraped datasets.',
     tags: ['NLP', 'Machine Learning', 'Sentiment Analysis'],
-    category: 'NLP'
+    category: 'NLP',
+    icon: MessageSquare,
+    outcome: '85.7% accuracy',
+    color: 'from-pink-500/20 to-pink-600/20'
   }
 ];
 
@@ -127,104 +151,108 @@ const Projects = () => {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
-            <Card
-              key={project.title}
-              className="group hover:shadow-portfolio-hover transition-all duration-300 hover-lift overflow-hidden fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="p-6">
-                {/* Header */}
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex-1">
-                    <h3 className="text-xl font-heading font-bold text-foreground mb-2 group-hover:text-accent transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-3">
-                      {project.year}
+          {filteredProjects.map((project, index) => {
+            const IconComponent = project.icon;
+            return (
+              <Card
+                key={project.title}
+                className="group hover:shadow-portfolio-hover transition-all duration-300 hover-lift overflow-hidden fade-in bg-card/50 backdrop-blur-sm"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="p-6">
+                  {/* Header with Icon */}
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${project.color} flex items-center justify-center flex-shrink-0`}>
+                      <IconComponent className="w-6 h-6 text-foreground" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-heading font-bold text-foreground mb-1 group-hover:text-accent transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-2">
+                        {project.year}
+                      </p>
+                      <div className="px-3 py-1 bg-accent/10 text-accent text-xs font-semibold rounded-full inline-block">
+                        {project.outcome}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  {/* Tech Stack */}
+                  <div className="mb-4">
+                    <div className="flex flex-wrap gap-1">
+                      {project.techStack.slice(0, 4).map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-1 bg-muted/50 text-muted-foreground text-xs rounded-md border border-border/50"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                      {project.techStack.length > 4 && (
+                        <span className="px-2 py-1 bg-muted/50 text-muted-foreground text-xs rounded-md border border-border/50">
+                          +{project.techStack.length - 4} more
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Why I built it */}
+                  <div className="mb-4">
+                    <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">
+                      {project.why}
                     </p>
                   </div>
-                </div>
 
-                {/* Description */}
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Tech Stack */}
-                <div className="mb-4">
-                  <div className="flex flex-wrap gap-1">
-                    {project.techStack.slice(0, 3).map((tech) => (
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag) => (
                       <span
-                        key={tech}
-                        className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-md"
+                        key={tag}
+                        className="px-2 py-1 text-xs rounded-full bg-muted/30 text-muted-foreground border border-border/30"
                       >
-                        {tech}
+                        {tag}
                       </span>
                     ))}
-                    {project.techStack.length > 3 && (
-                      <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-md">
-                        +{project.techStack.length - 3} more
-                      </span>
-                    )}
+                  </div>
+
+                  {/* Actions */}
+                  <div className="flex gap-2 pt-4 border-t border-border">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="flex-1 hover:bg-accent hover:text-accent-foreground hover:border-accent"
+                      asChild
+                    >
+                      <a
+                        href="https://www.github.com/SandhiyaGiri"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github className="w-4 h-4 mr-2" />
+                        Code
+                      </a>
+                    </Button>
+                    <Button
+                      size="sm"
+                      className="flex-1 bg-accent hover:bg-accent-hover text-accent-foreground"
+                      asChild
+                    >
+                      <a href="#contact">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Details
+                      </a>
+                    </Button>
                   </div>
                 </div>
-
-                {/* Why I built it */}
-                <div className="mb-4">
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    {project.why}
-                  </p>
-                </div>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-1 text-xs rounded-full"
-                      style={{
-                        background: 'var(--tag-bg)',
-                        color: 'var(--tag-text)'
-                      }}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Actions */}
-                <div className="flex gap-2 pt-4 border-t border-border">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="flex-1 hover:bg-accent hover:text-accent-foreground"
-                    asChild
-                  >
-                    <a
-                      href="https://www.github.com/SandhiyaGiri"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </a>
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="flex-1 hover:bg-accent hover:text-accent-foreground"
-                    asChild
-                  >
-                    <a href="#contact">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Details
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </Card>
-          ))}
+              </Card>
+            );
+          })}
         </div>
 
         {filteredProjects.length === 0 && (
