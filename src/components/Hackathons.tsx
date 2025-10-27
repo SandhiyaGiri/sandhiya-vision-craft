@@ -4,29 +4,29 @@ import { ExternalLink, FileText, Award } from 'lucide-react';
 
 const hackathons = [
   {
-    title: '🧠 AI Boomi Hackathon — RightTime',
-    description: 'AI-powered communication app that bridges consumers and delivery agents through smart translation, voice assistance, and schedule awareness. It ensures users receive calls, messages, and deliveries only at the right time and auto-responding when they are busy.',
-    details: 'Built using Google Gemini models and Agno multi-agent orchestration, RightTime reimagines delivery communication for convenience and efficiency. Solo project; developed a working MVP and connected with inspiring founders and developers throughout the event.',
+    title: 'AI Boomi Hackathon — RightTime',
+    description: 'AI-powered communication app that bridges consumers and delivery agents through smart translation and schedule awareness.',
+    details: 'Built using Google Gemini models and Agno multi-agent orchestration. Solo project with working MVP.',
     buttons: [
-      { label: 'Deck', icon: FileText, link: '#' },
-      { label: 'LinkedIn Post', icon: ExternalLink, link: '#' }
+      { label: 'Deck', icon: FileText, link: '/src/assets/deck/AI-Boomi-Hackathon-Delivery.pdf' },
+      { label: 'LinkedIn Post', icon: ExternalLink, link: 'https://www.linkedin.com/posts/sandhiya-c-v_as-far-back-as-i-can-remember-ive-always-activity-7369057066868490241-Wpk9?utm_source=share&utm_medium=member_desktop&rcm=ACoAADnxq-8BZGuw77Zgd3AaHWG4D_fwwRtKxnk' }
     ]
   },
   {
-    title: '🔗 Google Agentic AI Hackathon — Sahayak',
-    description: 'Sahayak is an AI-powered multi-agent platform that supports teachers in multi-grade, low-resource classrooms. It generates localized content, personalized learning aids, and connects educators and students with mentors and community supporters — fostering inclusive education.',
-    details: 'Though not shortlisted for the final round, this experience sparked my deep interest in Agentic AI workflows, motivating me to further explore real-world agent systems.',
+    title: 'Google Agentic AI Hackathon — Sahayak',
+    description: 'AI-powered multi-agent platform that supports teachers in multi-grade, low-resource classrooms.',
+    details: 'Generates localized content and personalized learning aids. Sparked deep interest in Agentic AI workflows.',
     buttons: [
-      { label: 'Deck', icon: FileText, link: '#' },
-      { label: 'Certificate', icon: Award, link: '#' }
+      { label: 'Deck', icon: FileText, link: '/src/assets/deck/Google-Agentic-AI-Sahayak.pdf' },
+      { label: 'Certificate', icon: Award, link: '/src/assets/certificates/Hack2skill-Certificate.png' }
     ]
   },
   {
-    title: '⚙️ AWS Super Hack — TechGenie',
-    description: 'TechGenie is an AI co-pilot for Managed Service Providers (MSPs) that automates repetitive technician workflows — including SLA monitoring, time tracking, and ticket resolution — by integrating with SuperOps and Jira.',
-    details: 'Built on AWS Bedrock and Agent Core, it aims to boost technician productivity and provide intelligent, data-driven service insights. Currently shortlisted for the second round and actively in progress.',
+    title: 'AWS Super Hack — TechGenie',
+    description: 'AI co-pilot for Managed Service Providers that automates repetitive technician workflows.',
+    details: 'Built on AWS Bedrock and Agent Core. Currently shortlisted for second round.',
     buttons: [
-      { label: 'Deck', icon: FileText, link: '#' }
+      { label: 'Deck', icon: FileText, link: '/src/assets/deck/Super-Hac-MSP-system.pdf' }
     ]
   }
 ];

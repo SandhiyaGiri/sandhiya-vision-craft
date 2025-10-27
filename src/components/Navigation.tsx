@@ -33,13 +33,12 @@ const Navigation = () => {
 
   const navLinks = [
     { href: '#about', label: 'About' },
-    { href: '#hackathons', label: 'Hackathons' },
-    { href: '#projects', label: 'Featured Projects' },
     { href: '#experience', label: 'Experience' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#hackathons', label: 'Hackathons' },
     { href: '#tech-stack', label: 'Tech Stack' },
-    { href: '#architectures', label: 'Architectures' },
     { href: '#certifications', label: 'Certifications' },
-    { href: '#contact', label: 'Let\'s Work Together' },
+    { href: '#contact', label: 'Collaborate' },
   ];
 
   const handleDownloadResume = () => {

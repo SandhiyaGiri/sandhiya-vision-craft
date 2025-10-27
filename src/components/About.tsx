@@ -1,15 +1,6 @@
-import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { ExternalLink, Download, Github } from 'lucide-react';
 
 const About = () => {
-  const handleDownloadResume = () => {
-    const link = document.createElement('a');
-    link.href = '/resume-sandhiya-cv.pdf';
-    link.download = 'Sandhiya_CV_Resume.pdf';
-    link.click();
-  };
-
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8" aria-labelledby="about-heading">
       <div className="max-w-6xl mx-auto">
@@ -42,46 +33,6 @@ const About = () => {
             </div>
 
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                onClick={handleDownloadResume}
-                className="bg-slate-900 hover:bg-slate-800 text-white"
-              >
-                <Download className="w-4 h-4 mr-2" />
-                Download Resume
-              </Button>
-              
-              <Button
-                variant="outline"
-                asChild
-                className="border-slate-300 text-slate-700 hover:bg-slate-50"
-              >
-                <a
-                  href="mailto:sandhiyagiri07@gmail.com"
-                  className="flex items-center"
-                >
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  Contact Me
-                </a>
-              </Button>
-              
-              <Button
-                variant="outline"
-                asChild
-                className="border-slate-300 text-slate-700 hover:bg-slate-50"
-              >
-                <a
-                  href="https://www.github.com/SandhiyaGiri"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center"
-                >
-                  <Github className="w-4 h-4 mr-2" />
-                  GitHub
-                </a>
-              </Button>
-            </div>
           </div>
         </div>
       </div>

@@ -37,6 +37,15 @@ const experiences = [
     description: 'Developed an intelligent document querying system using RAG with graph-based retrieval for efficient information extraction from technical PDFs.',
     isCurrent: false,
     type: 'Work'
+  },
+  {
+    role: 'Bachelor of Engineering in Electronics and Communication',
+    company: 'Government College of Technology, Coimbatore',
+    period: '2021 - 2025',
+    location: 'CGPA: 8.35',
+    description: 'with minor degree in Data Science and Data Analytics. A place that showed me the true scale of the world, my place within it, and of course, some engineering along the way.',
+    isCurrent: false,
+    type: 'Education'
   }
 ];
 
@@ -62,7 +71,7 @@ const Experience = () => {
               <div key={index} className="relative flex items-start gap-6 fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 {/* Timeline dot */}
                 <div className={`w-4 h-4 rounded-full flex-shrink-0 mt-2 ${
-                  exp.isCurrent ? 'bg-blue-500' : 'bg-green-500'
+                  exp.isCurrent ? 'bg-blue-500' : exp.type === 'Education' ? 'bg-yellow-500' : 'bg-green-500'
                 }`} />
 
                 {/* Content card */}
@@ -94,6 +103,8 @@ const Experience = () => {
                         <span className={`px-3 py-1 text-xs font-medium rounded-full ${
                           exp.type === 'Work' 
                             ? 'bg-green-100 text-green-700' 
+                            : exp.type === 'Education'
+                            ? 'bg-yellow-100 text-yellow-700'
                             : 'bg-blue-100 text-blue-700'
                         }`}>
                           {exp.type}
@@ -112,52 +123,6 @@ const Experience = () => {
           </div>
         </div>
 
-        {/* Education */}
-        <div className="mt-20 fade-in">
-          <div className="relative">
-            <div className="absolute left-8 top-0 bottom-0 w-px bg-gray-300" />
-            
-            <div className="relative flex items-start gap-6">
-              <div className="w-4 h-4 rounded-full bg-green-500 flex-shrink-0 mt-2" />
-              
-              <Card className="flex-1 p-6 hover:shadow-lg transition-all duration-300 hover-lift bg-white">
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                  <div className="flex-1">
-                    <h4 className="text-xl font-heading font-bold text-foreground mb-1">
-                      Bachelor of Engineering in Electronics and Communication
-                    </h4>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      with minor degree in Data Science and Data Analytics
-                    </p>
-                    <h5 className="text-lg font-medium text-accent mb-3">
-                      Government College of Technology, Coimbatore
-                    </h5>
-                    <p className="text-muted-foreground italic">
-                      "A place that showed me the true scale of the world, my place within it, and of course, some engineering along the way."
-                    </p>
-                  </div>
-                  
-                  <div className="flex flex-col items-end gap-2">
-                    <div className="text-right">
-                      <div className="text-sm text-muted-foreground mb-1">
-                        2021 - 2025
-                      </div>
-                      <div className="text-sm text-muted-foreground">
-                        CGPA: 8.35
-                      </div>
-                    </div>
-                    
-                    <div className="flex gap-2">
-                      <span className="px-3 py-1 text-xs font-medium rounded-full bg-green-100 text-green-700">
-                        Education
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
