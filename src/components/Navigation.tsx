@@ -33,6 +33,7 @@ const Navigation = () => {
 
   const navLinks = [
     { href: '#about', label: 'About' },
+    { href: '#hackathons', label: 'Hackathons' },
     { href: '#projects', label: 'Featured Projects' },
     { href: '#experience', label: 'Experience' },
     { href: '#tech-stack', label: 'Tech Stack' },
