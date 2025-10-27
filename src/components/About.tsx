@@ -17,8 +17,7 @@ const About = () => {
           {/* Profile Image */}
           <div className="relative fade-in">
             <div className="relative w-80 h-80 mx-auto lg:mx-0">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent/40 rounded-2xl rotate-3" />
-              <Card className="relative w-full h-full p-6 bg-card hover:shadow-portfolio-lg transition-all duration-300 hover-lift">
+              <Card className="relative w-full h-full p-6 bg-white border-slate-200 hover:shadow-lg transition-all duration-300">
                 <div className="w-full h-full rounded-xl overflow-hidden">
                   <img 
                     src="/profile-photo.jpg" 
@@ -32,11 +31,11 @@ const About = () => {
 
           {/* Content */}
           <div className="fade-in-delay-1">
-            <h2 id="about-heading" className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-6">
+            <h2 id="about-heading" className="text-3xl sm:text-4xl font-heading font-bold text-slate-900 mb-6">
               About Me
             </h2>
             
-            <div className="space-y-4 text-lg text-muted-foreground leading-relaxed mb-8">
+            <div className="space-y-4 text-lg text-slate-700 leading-relaxed mb-8">
               <p>
                 AI Scientist at 5C Network, specializing in developing vision and vision-language models for radiographic images, as well as medical imaging modalities such as CT, MRI, and X-ray. I have hands-on experience in building and deploying models for classification, detection, and segmentation tasks. Alongside my professional work, I also pursue hobby projects in agentic AI, workflow automation, and web development.
               </p>
@@ -47,7 +46,7 @@ const About = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 onClick={handleDownloadResume}
-                className="hover-lift bg-accent hover:bg-accent-hover"
+                className="bg-slate-900 hover:bg-slate-800 text-white"
               >
                 <Download className="w-4 h-4 mr-2" />
                 Download Resume
@@ -56,7 +55,7 @@ const About = () => {
               <Button
                 variant="outline"
                 asChild
-                className="hover-lift"
+                className="border-slate-300 text-slate-700 hover:bg-slate-50"
               >
                 <a
                   href="mailto:sandhiyagiri07@gmail.com"
@@ -70,7 +69,7 @@ const About = () => {
               <Button
                 variant="outline"
                 asChild
-                className="hover-lift"
+                className="border-slate-300 text-slate-700 hover:bg-slate-50"
               >
                 <a
                   href="https://www.github.com/SandhiyaGiri"

@@ -54,7 +54,7 @@ const Navigation = () => {
       {/* Skip to content link for accessibility */}
       <a
         href="#about"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 bg-accent text-accent-foreground px-4 py-2 rounded-md font-medium hover:bg-accent-hover transition-colors"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 bg-slate-900 text-white px-4 py-2 rounded-md font-medium hover:bg-slate-700 transition-colors"
       >
         Skip to content
       </a>
@@ -70,7 +70,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-heading font-bold text-foreground">
+            <h1 className="text-xl font-heading font-bold text-slate-900">
               Sandhiya CV
             </h1>
           </div>
@@ -86,8 +86,8 @@ const Navigation = () => {
                   href={link.href}
                   className={`nav-link font-medium transition-colors ${
                     isActive 
-                      ? 'text-accent font-semibold' 
-                      : 'text-foreground hover:text-accent'
+                      ? 'text-slate-900 font-semibold' 
+                      : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
                   {link.label}
@@ -148,7 +148,7 @@ const Navigation = () => {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="block px-3 py-2 text-foreground hover:text-accent font-medium transition-colors"
+                  className="block px-3 py-2 text-slate-600 hover:text-slate-900 font-medium transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
