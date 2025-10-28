@@ -1,9 +1,45 @@
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, Stethoscope, Brain, FileText, BarChart3, MessageSquare, Eye } from 'lucide-react';
+import { ExternalLink, Github, Stethoscope, Brain, FileText, BarChart3, MessageSquare, Eye, Mic, Heart, Activity } from 'lucide-react';
 
 const projects = [
+  {
+    title: 'AI Radiology Transcriber',
+    year: '2025',
+    description: 'Real-time speech-to-text platform for radiologists with AI-powered text correction.',
+    techStack: ['Node.js', 'Express.js', 'LiveKit WebRTC', 'Supabase', 'React', 'Docker', 'Render', 'PostgreSQL', 'Whisper', 'Kimi-K2'],
+    why: 'Built a real-time speech-to-text platform for radiologists with AI-powered transcription and text correction using Whisper and Kimi-K2 models. Designed a microservices-based backend with WebRTC audio streaming, LLM post-processing, and RESTful APIs secured with authentication.',
+    tags: ['Real-time', 'Healthcare', 'WebRTC', 'AI'],
+    category: 'Healthcare',
+    icon: Mic,
+    outcome: 'Real-time transcription',
+    color: 'from-cyan-500/20 to-cyan-600/20'
+  },
+  {
+    title: 'Personalized Health Assistant',
+    year: '2025',
+    description: 'Multi-agent health platform featuring meal planning, glucose monitoring and nutrition analysis.',
+    techStack: ['AI Agents', 'Agno', 'Google AI Studio', 'CopilotKit', 'AG-UI', 'SQLite', 'Docker Compose', 'GCP', 'FastAPI', 'Next.js'],
+    why: 'Architected a multi-agent health platform using the Agno framework, orchestrating 6 AI agents with intelligent intent routing and cross-agent communication. Developed a full-stack conversational interface with FastAPI backend, Next.js frontend, and CopilotKit for state management.',
+    tags: ['AI Agents', 'Healthcare', 'Multi-agent', 'Conversational AI'],
+    category: 'Healthcare',
+    icon: Heart,
+    outcome: '6 AI agents orchestrated',
+    color: 'from-pink-500/20 to-pink-600/20'
+  },
+  {
+    title: 'Radiology Reporting System for BPL X-Ray',
+    year: '2025',
+    description: 'AI system for predicting pathologies and generating automated radiology reports.',
+    techStack: ['PyTorch', 'Detectron2', 'Roboflow', 'Medical Imaging (DICOM)', 'Faster R-CNN', 'YOLO', 'EfficientDet', 'RetinaNet'],
+    why: 'Core member of the team who developed and deployed an AI system capable of predicting pathologies and generating automated radiology reports immediately after X-ray acquisition. Architected a multi-stage diagnostic pipeline for normal/abnormal classification, device detection, and multi-pathology segmentation across 21 conditions.',
+    tags: ['Computer Vision', 'Healthcare', 'Medical Imaging', 'Automation'],
+    category: 'Healthcare',
+    icon: Activity,
+    outcome: '21 conditions detected',
+    color: 'from-emerald-500/20 to-emerald-600/20'
+  },
   {
     title: 'Ankle Fracture Detection',
     year: '2025',

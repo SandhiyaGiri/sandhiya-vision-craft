@@ -1,37 +1,55 @@
 import { Card } from '@/components/ui/card';
-import { Code, Cpu, Stethoscope, Eye, Wrench } from 'lucide-react';
+import { Code, Cpu, Stethoscope, Eye, Wrench, Database, Cloud, Globe } from 'lucide-react';
 
 const TechStack = () => {
   const techCategories = [
     {
       title: "Programming Languages",
       icon: Code,
-      items: ["Python", "JavaScript", "C/C++"],
+      items: ["Python", "JavaScript", "TypeScript", "C/C++"],
       color: "from-blue-500/20 to-blue-600/20"
     },
     {
-      title: "Frameworks",
+      title: "AI/ML Frameworks",
       icon: Cpu,
-      items: ["PyTorch", "JAX", "TensorFlow"],
+      items: ["PyTorch", "JAX", "TensorFlow", "Agno", "Google AI Studio"],
       color: "from-green-500/20 to-green-600/20"
     },
     {
       title: "Medical Imaging Libraries",
       icon: Stethoscope,
-      items: ["MONAI", "torchxrayvision", "SLANTbrainSeg", "TotalSegmentator"],
+      items: ["MONAI", "torchxrayvision", "SLANTbrainSeg", "TotalSegmentator", "DICOM"],
       color: "from-red-500/20 to-red-600/20"
     },
     {
       title: "Vision Libraries",
       icon: Eye,
-      items: ["Detectron2", "YOLO", "Roboflow", "MMDetection"],
+      items: ["Detectron2", "YOLO", "Roboflow", "MMDetection", "Faster R-CNN", "RetinaNet"],
       color: "from-purple-500/20 to-purple-600/20"
     },
     {
-      title: "Tools",
+      title: "Web Technologies",
+      icon: Globe,
+      items: ["React", "Next.js", "Node.js", "Express.js", "FastAPI", "LiveKit WebRTC"],
+      color: "from-indigo-500/20 to-indigo-600/20"
+    },
+    {
+      title: "Databases & Cloud",
+      icon: Database,
+      items: ["PostgreSQL", "SQLite", "Supabase", "GCP", "Docker", "Render"],
+      color: "from-teal-500/20 to-teal-600/20"
+    },
+    {
+      title: "AI Agents & Tools",
+      icon: Cloud,
+      items: ["CopilotKit", "AG-UI", "Whisper", "Kimi-K2", "Docker Compose"],
+      color: "from-orange-500/20 to-orange-600/20"
+    },
+    {
+      title: "Development Tools",
       icon: Wrench,
       items: ["Visual Studio Code", "Cursor", "Lovable", "Jupyter Notebook", "GitHub"],
-      color: "from-orange-500/20 to-orange-600/20"
+      color: "from-gray-500/20 to-gray-600/20"
     }
   ];
 
