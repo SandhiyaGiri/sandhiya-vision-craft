@@ -119,8 +119,7 @@ const Contact = () => {
             </h3>
 
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              I'm always excited to collaborate on innovative AI projects, especially
-              in healthcare and computer vision. Whether you have a specific project
+              I'm always excited to collaborate on innovative AI projects. Whether you have a specific project
               in mind or just want to connect, feel free to reach out!
             </p>
 
