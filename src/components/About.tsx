@@ -10,9 +10,9 @@ const About = () => {
             <div className="relative w-80 h-80 mx-auto lg:mx-0">
               <Card className="relative w-full h-full p-6 bg-white border-slate-200 hover:shadow-lg transition-all duration-300">
                 <div className="w-full h-full rounded-xl overflow-hidden">
-                  <img 
-                    src="/profile-photo.jpg" 
-                    alt="Sandhiya C V" 
+                  <img
+                    src="./sandhiya-github.jpeg"
+                    alt="Sandhiya C V"
                     className="w-full h-full object-cover object-top rounded-xl"
                   />
                 </div>
@@ -25,7 +25,7 @@ const About = () => {
             <h2 id="about-heading" className="text-3xl sm:text-4xl font-heading font-bold text-slate-900 mb-6">
               About Me
             </h2>
-            
+
             <div className="space-y-4 text-lg text-slate-700 leading-relaxed mb-8">
               <p>
                 I'm a Full Stack Engineer with a background in computer vision, with experience across early-stage startups and enterprise environments like Halliburton. I started in data science and went on to deliver a computer vision system that exceeded expectations and directly contributed to revenue growth.
