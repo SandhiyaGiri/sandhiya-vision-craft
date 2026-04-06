@@ -34,7 +34,6 @@ const hackathons = [
     details: 'Built with ElevenLabs WebRTC agent integration, supporting 5 languages (English, Tamil, Malayalam, Kannada, Hindi). Real-time voice interaction with medical guardrails and report validation.',
     buttons: [
       { label: 'Project', icon: ExternalLink, link: 'https://github.com/SandhiyaGiri/sangre' },
-      { label: 'LinkedIn Post', icon: ExternalLink, link: 'https://www.linkedin.com' }
     ]
   },
   {

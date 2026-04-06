@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Github, Stethoscope, Brain, FileText, BarChart3, MessageSquare, Eye, Mic, Heart, Activity, Smartphone, Zap } from 'lucide-react';
 
 const projects = [
@@ -20,19 +21,46 @@ const projects = [
     isWebsiteOnly: true
   },
   {
-    title: 'Sangre - Telehealth Insight Companion',
+    title: 'Radiology Reporting System for BPL X-Ray',
     year: '2025',
-    description: 'Multilingual AI voice assistant for explaining health reports with voice-based conversations and safety guardrails.',
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'ElevenLabs WebRTC', 'JSON Schema Validation'],
-    why: 'Built a full-stack voice-first health assistant enabling patients to understand lab results through empathetic conversations in 5 languages. Designed report validation pipeline, insight generation with reference ranges, and integrated ElevenLabs agent for real-time voice interaction with safety guardrails.',
-    tags: ['Full Stack', 'Healthcare', 'Agentic AI', 'RAG'],
+    description: 'AI system for predicting pathologies and generating automated radiology reports.',
+    techStack: ['PyTorch', 'Detectron2', 'Roboflow', 'Medical Imaging (DICOM)', 'Faster R-CNN', 'YOLO'],
+    why: 'Developed an AI system capable of predicting pathologies and generating automated radiology reports immediately after X-ray acquisition. Architected a multi-stage diagnostic pipeline for normal/abnormal classification, device detection, and multi-pathology segmentation across 21 conditions.',
+    tags: ['Computer Vision', 'Healthcare'],
     category: 'Healthcare',
-    icon: Mic,
-    outcome: 'Multilingual voice health companion',
-    color: 'from-cyan-500/20 to-cyan-600/20',
-    fullStack: 'Frontend: Next.js with voice UI, real-time transcription. Backend: Report validation, insight pipeline, ElevenLabs agent integration.',
-    demoLink: 'https://drive.google.com/file/d/1k0uqJAMRioWqMsaSbQqqa7DDD3PzT6gQ/view?usp=sharing',
-    codeLink: 'https://github.com/SandhiyaGiri/sangre'
+    icon: Activity,
+    outcome: '21 conditions detected',
+    color: 'from-emerald-500/20 to-emerald-600/20',
+    blogLink: 'https://www.expresshealthcare.in/news/5c-network-and-bpl-medical-technologies-launch-bpl-cortex/452593/',
+    isBlogOnly: true
+  },
+  {
+    title: 'CorpusRush - Document Reasoning Pipeline',
+    year: '2026',
+    description: 'High-performance document ingestion and Q&A system with multi-format support and source attribution.',
+    techStack: ['Python', 'Azure AI', 'FastAPI', 'FAISS', 'Embedding API', 'PyPDF2', 'DOCX', 'XLSX'],
+    why: 'Built an end-to-end document processing pipeline handling PDF, DOCX, and XLSX formats. Designed intelligent chunking with metadata tracking, Azure AI embeddings, FAISS vector indexing, and retrieval-augmented generation for accurate Q&A with source citations.',
+    tags: ['Full Stack', 'Agentic AI', 'RAG'],
+    category: 'Full Stack',
+    icon: FileText,
+    outcome: 'Multi-format document Q&A system',
+    color: 'from-green-500/20 to-green-600/20',
+    fullStack: 'Backend: Python pipeline with Azure API integration, FastAPI serving. Processing: Multi-format parsing, chunking, embeddings, vector search, LLM integration.',
+    codeLink: 'https://github.com/SandhiyaGiri/CorpusRush'
+  },
+  {
+    title: 'Finzly Quiz Kiosk',
+    year: '2026',
+    description: 'Interactive kiosk application for banking readiness assessment with instant scoring and report generation.',
+    techStack: ['React', 'Vite', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'Framer Motion', 'Express.js', 'PostgreSQL'],
+    why: 'Architected a full-stack interactive quiz platform with lead capture, real-time scoring, and report generation. Built animated frontend with instant feedback, designed backend API for score calculation and admin features including Excel export functionality.',
+    tags: ['Full Stack'],
+    category: 'Full Stack',
+    icon: BarChart3,
+    outcome: 'Interactive quiz & reporting system',
+    color: 'from-amber-500/20 to-amber-600/20',
+    fullStack: 'Frontend: React + Vite with smooth animations and interactive flows. Backend: Express.js APIs, score calculation, admin panel for exports.',
+    isInProgress: true
   },
   {
     title: 'Medical Interpreter',
@@ -50,33 +78,6 @@ const projects = [
     codeLink: 'https://github.com/SandhiyaGiri/medical-interpreter'
   },
   {
-    title: 'Finzly Quiz Kiosk',
-    year: '2026',
-    description: 'Interactive kiosk application for banking readiness assessment with instant scoring and report generation.',
-    techStack: ['React', 'Vite', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'Framer Motion', 'Express.js', 'PostgreSQL'],
-    why: 'Architected a full-stack interactive quiz platform with lead capture, real-time scoring, and report generation. Built animated frontend with instant feedback, designed backend API for score calculation and admin features including Excel export functionality.',
-    tags: ['Full Stack'],
-    category: 'Full Stack',
-    icon: BarChart3,
-    outcome: 'Interactive quiz & reporting system',
-    color: 'from-amber-500/20 to-amber-600/20',
-    fullStack: 'Frontend: React + Vite with smooth animations and interactive flows. Backend: Express.js APIs, score calculation, admin panel for exports.'
-  },
-  {
-    title: 'CorpusRush - Document Reasoning Pipeline',
-    year: '2026',
-    description: 'High-performance document ingestion and Q&A system with multi-format support and source attribution.',
-    techStack: ['Python', 'Azure AI', 'FastAPI', 'FAISS', 'Embedding API', 'PyPDF2', 'DOCX', 'XLSX'],
-    why: 'Built an end-to-end document processing pipeline handling PDF, DOCX, and XLSX formats. Designed intelligent chunking with metadata tracking, Azure AI embeddings, FAISS vector indexing, and retrieval-augmented generation for accurate Q&A with source citations.',
-    tags: ['Full Stack', 'Agentic AI', 'RAG'],
-    category: 'Full Stack',
-    icon: FileText,
-    outcome: 'Multi-format document Q&A system',
-    color: 'from-green-500/20 to-green-600/20',
-    fullStack: 'Backend: Python pipeline with Azure API integration, FastAPI serving. Processing: Multi-format parsing, chunking, embeddings, vector search, LLM integration.',
-    codeLink: 'https://github.com/SandhiyaGiri/CorpusRush'
-  },
-  {
     title: 'Personalized Health Assistant',
     year: '2025',
     description: 'Multi-agent health platform featuring meal planning, glucose monitoring and nutrition analysis.',
@@ -88,19 +89,23 @@ const projects = [
     outcome: '6 AI agents orchestrated',
     color: 'from-pink-500/20 to-pink-600/20',
     fullStack: 'Frontend: Next.js interface for meal planning. Backend: FastAPI with Agno agents orchestration.',
+    demoLink: 'https://drive.google.com/file/d/1OWzPBobYXHfPtccaX_ErVETkXYrhuq_1/view?usp=drive_link',
     codeLink: 'https://github.com/SandhiyaGiri/health_agent'
   },
   {
-    title: 'Radiology Reporting System for BPL X-Ray',
+    title: 'Sangre - Telehealth Insight Companion',
     year: '2025',
-    description: 'AI system for predicting pathologies and generating automated radiology reports.',
-    techStack: ['PyTorch', 'Detectron2', 'Roboflow', 'Medical Imaging (DICOM)', 'Faster R-CNN', 'YOLO'],
-    why: 'Developed an AI system capable of predicting pathologies and generating automated radiology reports immediately after X-ray acquisition. Architected a multi-stage diagnostic pipeline for normal/abnormal classification, device detection, and multi-pathology segmentation across 21 conditions.',
-    tags: ['Computer Vision', 'Healthcare'],
+    description: 'Multilingual AI voice assistant for explaining health reports with voice-based conversations and safety guardrails.',
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'ElevenLabs WebRTC', 'JSON Schema Validation'],
+    why: 'Built a full-stack voice-first health assistant enabling patients to understand lab results through empathetic conversations in 5 languages. Designed report validation pipeline, insight generation with reference ranges, and integrated ElevenLabs agent for real-time voice interaction with safety guardrails.',
+    tags: ['Full Stack', 'Healthcare', 'Agentic AI', 'RAG'],
     category: 'Healthcare',
-    icon: Activity,
-    outcome: '21 conditions detected',
-    color: 'from-emerald-500/20 to-emerald-600/20'
+    icon: Mic,
+    outcome: 'Multilingual voice health companion',
+    color: 'from-cyan-500/20 to-cyan-600/20',
+    fullStack: 'Frontend: Next.js with voice UI, real-time transcription. Backend: Report validation, insight pipeline, ElevenLabs agent integration.',
+    demoLink: 'https://drive.google.com/file/d/1k0uqJAMRioWqMsaSbQqqa7DDD3PzT6gQ/view?usp=sharing',
+    codeLink: 'https://github.com/SandhiyaGiri/sangre'
   },
   {
     title: 'Q&A Retrieval System (Graph-based)',
@@ -198,6 +203,18 @@ const Projects = () => {
                     {project.description}
                   </p>
 
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1 bg-muted text-muted-foreground text-xs font-medium rounded-full border border-border"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
                   {/* Actions */}
                   <div className="flex gap-2 pt-4 border-t border-border mt-auto">
                     {project.isWebsiteOnly ? (
@@ -215,8 +232,46 @@ const Projects = () => {
                           Know More
                         </a>
                       </Button>
+                    ) : project.isBlogOnly ? (
+                      <Button
+                        size="sm"
+                        className="flex-1 bg-accent hover:bg-accent-hover text-accent-foreground"
+                        asChild
+                      >
+                        <a
+                          href={project.blogLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Blog
+                        </a>
+                      </Button>
+                    ) : project.isInProgress ? (
+                      <div className="flex-1 flex items-center justify-center">
+                        <Badge variant="secondary" className="bg-amber-500/20 text-amber-700 border-amber-500/30">
+                          In Progress
+                        </Badge>
+                      </div>
                     ) : (
                       <>
+                        {project.blogLink && (
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="flex-1 hover:bg-accent hover:text-accent-foreground hover:border-accent"
+                            asChild
+                          >
+                            <a
+                              href={project.blogLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <ExternalLink className="w-4 h-4 mr-2" />
+                              Blog
+                            </a>
+                          </Button>
+                        )}
                         <Button
                           variant="outline"
                           size="sm"
