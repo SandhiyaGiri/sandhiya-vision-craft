@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronDown, Download } from 'lucide-react';
+import { ChevronDown, ExternalLink } from 'lucide-react';
 
 const Hero = () => {
   const [offsetY, setOffsetY] = useState(0);
@@ -13,13 +13,6 @@ const Hero = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const handleDownloadResume = () => {
-    const link = document.createElement('a');
-    link.href = '/resume-sandhiya-cv.pdf';
-    link.download = 'Sandhiya_Resume.pdf';
-    link.click();
-  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -51,13 +44,19 @@ const Hero = () => {
             </Button>
 
             <Button
-              onClick={handleDownloadResume}
               size="lg"
               variant="outline"
               className="border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-10 py-4 text-lg font-medium hover-lift min-w-[180px] shadow-sm"
+              asChild
             >
-              <Download className="w-5 h-5 mr-2" />
-              Download Resume
+              <a
+                href="/Sandhiya_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink className="w-5 h-5 mr-2" />
+                View Resume
+              </a>
             </Button>
           </div>
         </div>

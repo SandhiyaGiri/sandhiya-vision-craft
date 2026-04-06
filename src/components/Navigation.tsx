@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Download, ExternalLink, Menu, X } from 'lucide-react';
+import { ExternalLink, Menu, X } from 'lucide-react';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -10,7 +10,7 @@ const Navigation = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
+
       // Update active section based on scroll position
       const sections = navLinks.map(link => link.href.substring(1));
       const currentSection = sections.find(section => {
@@ -21,7 +21,7 @@ const Navigation = () => {
         }
         return false;
       });
-      
+
       if (currentSection) {
         setActiveSection(currentSection);
       }
@@ -39,14 +39,6 @@ const Navigation = () => {
     { href: '#certifications', label: 'Certifications' },
     { href: '#contact', label: 'Collaborate' },
   ];
-
-  const handleDownloadResume = () => {
-    // In a real implementation, this would download the actual resume
-    const link = document.createElement('a');
-    link.href = '/resume-sandhiya-cv.pdf';
-    link.download = 'Sandhiya_CV_Resume.pdf';
-    link.click();
-  };
 
   return (
     <>
@@ -98,13 +90,19 @@ const Navigation = () => {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={handleDownloadResume}
+                asChild
                 className="hover-lift"
               >
-                <Download className="w-4 h-4 mr-2" />
-                Resume
+                <a
+                  href="/Sandhiya_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Resume
+                </a>
               </Button>
-              
+
               <Button
                 variant="outline"
                 size="sm"
@@ -158,13 +156,19 @@ const Navigation = () => {
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={handleDownloadResume}
+                  asChild
                   className="w-full justify-start"
                 >
-                  <Download className="w-4 h-4 mr-2" />
-                  Resume
+                  <a
+                    href="/Sandhiya_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Resume
+                  </a>
                 </Button>
-                
+
                 <Button
                   variant="outline"
                   size="sm"
