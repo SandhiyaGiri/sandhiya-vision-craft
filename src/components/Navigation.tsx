@@ -36,7 +36,6 @@ const Navigation = () => {
     { href: '#experience', label: 'Experience' },
     { href: '#projects', label: 'Projects' },
     { href: '#hackathons', label: 'Hackathons' },
-    { href: '#tech-stack', label: 'Tech Stack' },
     { href: '#certifications', label: 'Certifications' },
     { href: '#contact', label: 'Collaborate' },
   ];

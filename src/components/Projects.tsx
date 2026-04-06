@@ -1,144 +1,123 @@
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, Stethoscope, Brain, FileText, BarChart3, MessageSquare, Eye, Mic, Heart, Activity } from 'lucide-react';
+import { ExternalLink, Github, Stethoscope, Brain, FileText, BarChart3, MessageSquare, Eye, Mic, Heart, Activity, Smartphone, Zap } from 'lucide-react';
 
 const projects = [
   {
-    title: 'AI Radiology Transcriber',
+    title: 'Laminar Dental - Dental Scribe Platform',
+    year: '2025-Present',
+    description: 'Professional dental practice management and documentation platform.',
+    techStack: ['Full Stack', 'Healthcare'],
+    why: 'Advanced dental practice management system.',
+    tags: ['Full Stack', 'Healthcare'],
+    category: 'Healthcare',
+    icon: Stethoscope,
+    outcome: 'Dental practice optimized',
+    color: 'from-red-500/20 to-red-600/20',
+    fullStack: 'Comprehensive dental management platform.',
+    websiteLink: 'https://laminardental.com/',
+    isWebsiteOnly: true
+  },
+  {
+    title: 'Sangre - Telehealth Insight Companion',
     year: '2025',
-    description: 'Real-time speech-to-text platform for radiologists with AI-powered text correction.',
-    techStack: ['Node.js', 'Express.js', 'LiveKit WebRTC', 'Supabase', 'React', 'Docker', 'Render', 'PostgreSQL', 'Whisper', 'Kimi-K2'],
-    why: 'Built a real-time speech-to-text platform for radiologists with AI-powered transcription and text correction using Whisper and Kimi-K2 models. Designed a microservices-based backend with WebRTC audio streaming, LLM post-processing, and RESTful APIs secured with authentication.',
-    tags: ['Real-time', 'Healthcare', 'WebRTC', 'AI'],
+    description: 'Multilingual AI voice assistant for explaining health reports with voice-based conversations and safety guardrails.',
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'ElevenLabs WebRTC', 'JSON Schema Validation'],
+    why: 'Built a full-stack voice-first health assistant enabling patients to understand lab results through empathetic conversations in 5 languages. Designed report validation pipeline, insight generation with reference ranges, and integrated ElevenLabs agent for real-time voice interaction with safety guardrails.',
+    tags: ['Full Stack', 'Healthcare', 'Agentic AI', 'RAG'],
     category: 'Healthcare',
     icon: Mic,
-    outcome: 'Real-time transcription',
-    color: 'from-cyan-500/20 to-cyan-600/20'
+    outcome: 'Multilingual voice health companion',
+    color: 'from-cyan-500/20 to-cyan-600/20',
+    fullStack: 'Frontend: Next.js with voice UI, real-time transcription. Backend: Report validation, insight pipeline, ElevenLabs agent integration.',
+    demoLink: 'https://drive.google.com/file/d/1k0uqJAMRioWqMsaSbQqqa7DDD3PzT6gQ/view?usp=sharing',
+    codeLink: 'https://github.com/SandhiyaGiri/sangre'
+  },
+  {
+    title: 'Medical Interpreter',
+    year: '2026',
+    description: 'AI-powered medical data interpretation using Google Gemini for intelligent analysis and insights.',
+    techStack: ['Google Gemini API', 'React', 'TypeScript', 'Tailwind CSS', 'AI Studio'],
+    why: 'Developed an intelligent medical data analysis tool leveraging Gemini API for real-time interpretation of medical reports and lab results. Designed intuitive UI for inputting medical data and receiving AI-powered insights.',
+    tags: ['Full Stack', 'Healthcare', 'Agentic AI', 'RAG'],
+    category: 'Healthcare',
+    icon: Brain,
+    outcome: 'AI-powered medical analysis',
+    color: 'from-purple-500/20 to-purple-600/20',
+    fullStack: 'Frontend: React with TypeScript. Backend: Gemini API integration for medical data processing.',
+    demoLink: 'https://youtu.be/NsP96Kif8lw?si=oZQj75rjgIQGCsQk',
+    codeLink: 'https://github.com/SandhiyaGiri/medical-interpreter'
+  },
+  {
+    title: 'Finzly Quiz Kiosk',
+    year: '2026',
+    description: 'Interactive kiosk application for banking readiness assessment with instant scoring and report generation.',
+    techStack: ['React', 'Vite', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'Framer Motion', 'Express.js', 'PostgreSQL'],
+    why: 'Architected a full-stack interactive quiz platform with lead capture, real-time scoring, and report generation. Built animated frontend with instant feedback, designed backend API for score calculation and admin features including Excel export functionality.',
+    tags: ['Full Stack'],
+    category: 'Full Stack',
+    icon: BarChart3,
+    outcome: 'Interactive quiz & reporting system',
+    color: 'from-amber-500/20 to-amber-600/20',
+    fullStack: 'Frontend: React + Vite with smooth animations and interactive flows. Backend: Express.js APIs, score calculation, admin panel for exports.'
+  },
+  {
+    title: 'CorpusRush - Document Reasoning Pipeline',
+    year: '2026',
+    description: 'High-performance document ingestion and Q&A system with multi-format support and source attribution.',
+    techStack: ['Python', 'Azure AI', 'FastAPI', 'FAISS', 'Embedding API', 'PyPDF2', 'DOCX', 'XLSX'],
+    why: 'Built an end-to-end document processing pipeline handling PDF, DOCX, and XLSX formats. Designed intelligent chunking with metadata tracking, Azure AI embeddings, FAISS vector indexing, and retrieval-augmented generation for accurate Q&A with source citations.',
+    tags: ['Full Stack', 'Agentic AI', 'RAG'],
+    category: 'Full Stack',
+    icon: FileText,
+    outcome: 'Multi-format document Q&A system',
+    color: 'from-green-500/20 to-green-600/20',
+    fullStack: 'Backend: Python pipeline with Azure API integration, FastAPI serving. Processing: Multi-format parsing, chunking, embeddings, vector search, LLM integration.',
+    codeLink: 'https://github.com/SandhiyaGiri/CorpusRush'
   },
   {
     title: 'Personalized Health Assistant',
     year: '2025',
     description: 'Multi-agent health platform featuring meal planning, glucose monitoring and nutrition analysis.',
-    techStack: ['AI Agents', 'Agno', 'Google AI Studio', 'CopilotKit', 'AG-UI', 'SQLite', 'Docker Compose', 'GCP', 'FastAPI', 'Next.js'],
-    why: 'Architected a multi-agent health platform using the Agno framework, orchestrating 6 AI agents with intelligent intent routing and cross-agent communication. Developed a full-stack conversational interface with FastAPI backend, Next.js frontend, and CopilotKit for state management.',
-    tags: ['AI Agents', 'Healthcare', 'Multi-agent', 'Conversational AI'],
+    techStack: ['AI Agents', 'Agno', 'Google AI Studio', 'FastAPI', 'Next.js', 'SQLite'],
+    why: 'Architected a multi-agent health platform using the Agno framework, orchestrating 6 AI agents with intelligent intent routing and cross-agent communication. Developed a full-stack conversational interface with FastAPI backend, Next.js frontend for meal planning and health tracking.',
+    tags: ['Agentic AI', 'Healthcare'],
     category: 'Healthcare',
     icon: Heart,
     outcome: '6 AI agents orchestrated',
-    color: 'from-pink-500/20 to-pink-600/20'
+    color: 'from-pink-500/20 to-pink-600/20',
+    fullStack: 'Frontend: Next.js interface for meal planning. Backend: FastAPI with Agno agents orchestration.',
+    codeLink: 'https://github.com/SandhiyaGiri/health_agent'
   },
   {
     title: 'Radiology Reporting System for BPL X-Ray',
     year: '2025',
     description: 'AI system for predicting pathologies and generating automated radiology reports.',
-    techStack: ['PyTorch', 'Detectron2', 'Roboflow', 'Medical Imaging (DICOM)', 'Faster R-CNN', 'YOLO', 'EfficientDet', 'RetinaNet'],
-    why: 'Core member of the team who developed and deployed an AI system capable of predicting pathologies and generating automated radiology reports immediately after X-ray acquisition. Architected a multi-stage diagnostic pipeline for normal/abnormal classification, device detection, and multi-pathology segmentation across 21 conditions.',
-    tags: ['Computer Vision', 'Healthcare', 'Medical Imaging', 'Automation'],
+    techStack: ['PyTorch', 'Detectron2', 'Roboflow', 'Medical Imaging (DICOM)', 'Faster R-CNN', 'YOLO'],
+    why: 'Developed an AI system capable of predicting pathologies and generating automated radiology reports immediately after X-ray acquisition. Architected a multi-stage diagnostic pipeline for normal/abnormal classification, device detection, and multi-pathology segmentation across 21 conditions.',
+    tags: ['Computer Vision', 'Healthcare'],
     category: 'Healthcare',
     icon: Activity,
     outcome: '21 conditions detected',
     color: 'from-emerald-500/20 to-emerald-600/20'
   },
   {
-    title: 'Ankle Fracture Detection',
-    year: '2025',
-    description: 'Detection of fractures in radiographs using state-of-the-art vision frameworks.',
-    techStack: ['PyTorch', 'YOLOv8/v11', 'Detectron2', 'RF-DETR', 'Faster R-CNN', 'CLAHE', 'LabelStudio', 'GCP', 'n8n'],
-    why: 'Developed multi-class fracture detection models on annotated X-ray datasets (AXR, HIL) covering 38 fracture classes. Addressed the issue of view variation involved in Ankle Fracture detection and built each model specifically for different views.',
-    tags: ['Computer Vision', 'Healthcare', 'Deep Learning'],
-    category: 'Healthcare',
-    icon: Stethoscope,
-    outcome: '38 fracture classes detected',
-    color: 'from-red-500/20 to-red-600/20'
-  },
-  {
-    title: 'Shoulder Fracture Detection',
-    year: '2025',
-    description: 'Building robust fracture classification and detection systems for shoulder X-rays.',
-    techStack: ['PyTorch', 'RF-DETR', 'MMDetection RTMDet', 'YOLO', 'Faster R-CNN'],
-    why: 'Designed binary and multi-class models to distinguish normal and fracture cases in shoulder radiographs. RF-DETR Large outperformed baseline models with ~88% recall post human-in-loop validation.',
-    tags: ['Computer Vision', 'Healthcare', 'AI'],
-    category: 'Healthcare',
-    icon: Stethoscope,
-    outcome: '88% recall achieved',
-    color: 'from-blue-500/20 to-blue-600/20'
-  },
-  {
-    title: 'Pleural Effusion Segmentation',
-    year: '2025',
-    description: 'Advanced segmentation of pleural effusion in chest radiographs.',
-    techStack: ['PyTorch', 'MONAI', 'UNet', 'UNet++', 'Attention UNet', 'SwinUNETR', 'YOLO', 'TorchXRayVision'],
-    why: 'Trained and compared 7 segmentation models on a dataset of 6,223 annotated images. YOLO and TorchXRayVision models demonstrated superior results due to pretraining on large-scale CXR datasets, highlighting the importance of domain-specific transfer learning.',
-    tags: ['Computer Vision', 'Segmentation', 'Healthcare'],
-    category: 'Healthcare',
-    icon: Eye,
-    outcome: '6,223 images processed',
-    color: 'from-green-500/20 to-green-600/20'
-  },
-  {
-    title: 'Vision-Language Models for Radiology',
-    year: '2025',
-    description: 'Bridging imaging and reporting through multimodal AI.',
-    techStack: ['PyTorch', 'JAX', 'TensorFlow', 'MONAI VILA V3', 'PaliGemma', 'MedGemma', 'BioMedCLIP', 'BioMedLM'],
-    why: 'Built VLM pipelines aligning radiographs with reports for diagnostic support. Experimented with zero-shot inference, fine-tuned BioMedCLIP for classification (~83% accuracy), and trained models on 40k image-report pairs.',
-    tags: ['LLM', 'Computer Vision', 'Healthcare', 'Multimodal'],
-    category: 'Research',
-    icon: Brain,
-    outcome: '83% accuracy achieved',
-    color: 'from-purple-500/20 to-purple-600/20'
-  },
-  {
     title: 'Q&A Retrieval System (Graph-based)',
     year: '2024',
-    description: 'Intelligent PDF querying using RAG with graph-based retrieval.',
-    techStack: ['Neo4j', 'Cypher', 'ember-v1 embeddings', 'BM25', 'Reranker', 'Streamlit'],
-    why: 'Developed a retrieval-augmented generation (RAG) system to query multi-PDF datasets. Built graph relationships between text chunks and entities for structured retrieval. Combined dense and sparse encoders with reranking.',
-    tags: ['RAG', 'Graph DB', 'NLP'],
-    category: 'NLP',
+    description: 'Intelligent PDF querying using RAG with graph-based retrieval and hybrid search.',
+    techStack: ['Neo4j', 'Cypher', 'Embeddings', 'BM25', 'Reranker', 'Streamlit'],
+    why: 'Developed a retrieval-augmented generation system for multi-PDF datasets during internship at Halliburton. Built graph relationships between text chunks and entities for structured retrieval. Combined dense and sparse encoders with reranking to improve answer relevance by 25-35%.',
+    tags: ['Agentic AI', 'RAG'],
+    category: 'Full Stack',
     icon: FileText,
     outcome: 'Multi-PDF RAG system',
-    color: 'from-orange-500/20 to-orange-600/20'
-  },
-  {
-    title: 'Q&A Retrieval System (FAISS-based)',
-    year: '2024',
-    description: 'Efficient unstructured data querying with FAISS and LLM integration.',
-    techStack: ['FAISS', 'Sentence Transformers', 'Mistral-7B', 'RAG'],
-    why: 'Designed a scalable retrieval pipeline for unstructured PDFs. Stored embeddings in FAISS for efficient similarity search and clustering. Integrated Mistral-7B for response generation.',
-    tags: ['RAG', 'LLM', 'NLP'],
-    category: 'NLP',
-    icon: FileText,
-    outcome: 'Scalable retrieval pipeline',
-    color: 'from-indigo-500/20 to-indigo-600/20'
-  },
-  {
-    title: 'Customer Review Intelligence',
-    year: '2022',
-    description: 'NLP-powered review analytics for a leading electronics retailer.',
-    techStack: ['spaCy', 'Transformers', 'FastAPI'],
-    why: 'Built before GenAI hype to mine customer reviews for sentiment, entities, and CX issues. Provided actionable insights for product improvement and customer experience enhancement.',
-    tags: ['NLP', 'Analytics', 'Sentiment Analysis'],
-    category: 'Analytics',
-    icon: BarChart3,
-    outcome: 'Actionable CX insights',
-    color: 'from-teal-500/20 to-teal-600/20'
-  },
-  {
-    title: 'Sentiment Analysis',
-    year: '2024',
-    description: 'Classifying movie reviews with Naive Bayes for opinion mining.',
-    techStack: ['Python', 'NLP', 'Scikit-learn', 'IMDB dataset'],
-    why: 'Trained a Naive Bayes classifier on IMDB 50k dataset, achieving 85.7% accuracy. Applied text preprocessing and serialized the trained model for reusability on newly scraped datasets.',
-    tags: ['NLP', 'Machine Learning', 'Sentiment Analysis'],
-    category: 'NLP',
-    icon: MessageSquare,
-    outcome: '85.7% accuracy',
-    color: 'from-pink-500/20 to-pink-600/20'
+    color: 'from-orange-500/20 to-orange-600/20',
+    codeLink: 'https://github.com/SandhiyaGiri/CorpusRush'
   }
 ];
 
-const allTags = Array.from(new Set(projects.flatMap(project => project.tags))).sort();
+const allTags = ['Full Stack', 'Agentic AI', 'Healthcare', 'Computer Vision', 'RAG'];
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -158,11 +137,11 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 fade-in">
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
-            Featured Projects
+            Projects & Experience
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A collection of AI and data science projects spanning healthcare, 
-            NLP, and computer vision
+            Full-stack applications, AI-powered systems, and intelligent healthcare solutions
+            built with modern engineering practices
           </p>
         </div>
 
@@ -192,17 +171,17 @@ const Projects = () => {
             return (
               <Card
                 key={project.title}
-                className="group hover:shadow-portfolio-hover transition-all duration-300 hover-lift overflow-hidden fade-in bg-card/50 backdrop-blur-sm"
+                className="group hover:shadow-portfolio-hover transition-all duration-300 hover-lift overflow-hidden fade-in bg-card/50 backdrop-blur-sm flex flex-col h-full"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="p-6">
+                <div className="p-6 flex flex-col h-full">
                   {/* Header with Icon */}
                   <div className="flex items-start gap-4 mb-4">
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${project.color} flex items-center justify-center flex-shrink-0`}>
-                      <IconComponent className="w-6 h-6 text-foreground" />
+                    <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${project.color} flex items-center justify-center flex-shrink-0`}>
+                      <IconComponent className="w-7 h-7 text-foreground" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-heading font-bold text-foreground mb-1 group-hover:text-accent transition-colors">
+                      <h3 className="text-lg font-heading font-bold text-foreground mb-1 group-hover:text-accent transition-colors leading-tight">
                         {project.title}
                       </h3>
                       <p className="text-sm text-muted-foreground mb-2">
@@ -215,75 +194,56 @@ const Projects = () => {
                   </div>
 
                   {/* Description */}
-                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                  <p className="text-muted-foreground text-base mb-6 leading-relaxed flex-grow">
                     {project.description}
                   </p>
 
-                  {/* Tech Stack */}
-                  <div className="mb-4">
-                    <div className="flex flex-wrap gap-1">
-                      {project.techStack.slice(0, 4).map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2 py-1 bg-muted/50 text-muted-foreground text-xs rounded-md border border-border/50"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                      {project.techStack.length > 4 && (
-                        <span className="px-2 py-1 bg-muted/50 text-muted-foreground text-xs rounded-md border border-border/50">
-                          +{project.techStack.length - 4} more
-                        </span>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Why I built it */}
-                  <div className="mb-4">
-                    <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">
-                      {project.why}
-                    </p>
-                  </div>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 py-1 text-xs rounded-full bg-muted/30 text-muted-foreground border border-border/30"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
                   {/* Actions */}
-                  <div className="flex gap-2 pt-4 border-t border-border">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="flex-1 hover:bg-accent hover:text-accent-foreground hover:border-accent"
-                      asChild
-                    >
-                      <a
-                        href="https://www.github.com/SandhiyaGiri"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                  <div className="flex gap-2 pt-4 border-t border-border mt-auto">
+                    {project.isWebsiteOnly ? (
+                      <Button
+                        size="sm"
+                        className="flex-1 bg-accent hover:bg-accent-hover text-accent-foreground"
+                        asChild
                       >
-                        <Github className="w-4 h-4 mr-2" />
-                        Code
-                      </a>
-                    </Button>
-                    <Button
-                      size="sm"
-                      className="flex-1 bg-accent hover:bg-accent-hover text-accent-foreground"
-                      asChild
-                    >
-                      <a href="#contact">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Details
-                      </a>
-                    </Button>
+                        <a
+                          href={project.websiteLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Know More
+                        </a>
+                      </Button>
+                    ) : (
+                      <>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="flex-1 hover:bg-accent hover:text-accent-foreground hover:border-accent"
+                          asChild
+                        >
+                          <a
+                            href={project.codeLink || "https://www.github.com/SandhiyaGiri"}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Github className="w-4 h-4 mr-2" />
+                            Code
+                          </a>
+                        </Button>
+                        <Button
+                          size="sm"
+                          className="flex-1 bg-accent hover:bg-accent-hover text-accent-foreground"
+                          asChild
+                        >
+                          <a href={project.demoLink || "#contact"} target={project.demoLink ? "_blank" : undefined} rel={project.demoLink ? "noopener noreferrer" : undefined}>
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            {project.demoLink ? 'Demo Video' : 'Details'}
+                          </a>
+                        </Button>
+                      </>
+                    )}
                   </div>
                 </div>
               </Card>

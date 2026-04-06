@@ -28,7 +28,10 @@ const About = () => {
             
             <div className="space-y-4 text-lg text-slate-700 leading-relaxed mb-8">
               <p>
-                AI Scientist at 5C Network, specializing in developing vision and vision-language models for radiographic images, as well as medical imaging modalities such as CT, MRI, and X-ray. I have hands-on experience in building and deploying models for classification, detection, and segmentation tasks. Alongside my professional work, I also pursue hobby projects in agentic AI, workflow automation, and web development.
+                I'm a Full Stack Engineer with a background in computer vision, with experience across early-stage startups and enterprise environments like Halliburton. I started in data science and went on to deliver a computer vision system that exceeded expectations and directly contributed to revenue growth.
+              </p>
+              <p>
+                Through hackathons and hands-on projects, I developed a strong interest in building end-to-end products, which led me to focus on full-stack development. I'm particularly interested in applying AI within software systems and working in teams that value strong engineering and innovation.
               </p>
             </div>
 

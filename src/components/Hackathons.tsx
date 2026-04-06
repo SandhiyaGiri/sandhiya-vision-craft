@@ -4,12 +4,37 @@ import { ExternalLink, FileText, Award } from 'lucide-react';
 
 const hackathons = [
   {
+    title: 'Lucio AI Hackathon — CorpusRush',
+    description: 'High-performance document reasoning pipeline with multi-format support and source attribution.',
+    details: 'Built in 7 days for rapid document processing. Handles PDF, DOCX, XLSX with intelligent chunking, Azure AI embeddings, FAISS indexing, and RAG-based Q&A with citations.',
+    buttons: [
+      { label: 'Project', icon: ExternalLink, link: 'https://github.com/SandhiyaGiri/corpus-rush' }
+    ]
+  },
+  {
+    title: 'Google Gemini AI Hackathon — Medical Interpreter',
+    description: 'AI-powered medical data interpretation tool for intelligent health report analysis.',
+    details: 'Leverages Google Gemini API for real-time interpretation of medical reports and lab results. Intuitive UI for inputting medical data and receiving AI-powered insights.',
+    buttons: [
+      { label: 'Project', icon: ExternalLink, link: 'https://github.com/SandhiyaGiri/medical-interpreter' }
+    ]
+  },
+  {
     title: 'AI Boomi Hackathon — RightTime',
     description: 'AI-powered communication app that bridges consumers and delivery agents through smart translation and schedule awareness.',
     details: 'Built using Google Gemini models and Agno multi-agent orchestration. Solo project with working MVP.',
     buttons: [
       { label: 'Deck', icon: FileText, link: '/src/assets/deck/AI-Boomi-Hackathon-Delivery.pdf' },
       { label: 'LinkedIn Post', icon: ExternalLink, link: 'https://www.linkedin.com/posts/sandhiya-c-v_as-far-back-as-i-can-remember-ive-always-activity-7369057066868490241-Wpk9?utm_source=share&utm_medium=member_desktop&rcm=ACoAADnxq-8BZGuw77Zgd3AaHWG4D_fwwRtKxnk' }
+    ]
+  },
+  {
+    title: 'ElevenLabs Hackathon — Sangre',
+    description: 'Multilingual telehealth companion for understanding health reports through empathetic voice conversations.',
+    details: 'Built with ElevenLabs WebRTC agent integration, supporting 5 languages (English, Tamil, Malayalam, Kannada, Hindi). Real-time voice interaction with medical guardrails and report validation.',
+    buttons: [
+      { label: 'Project', icon: ExternalLink, link: 'https://github.com/SandhiyaGiri/sangre' },
+      { label: 'LinkedIn Post', icon: ExternalLink, link: 'https://www.linkedin.com' }
     ]
   },
   {

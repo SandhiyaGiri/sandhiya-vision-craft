@@ -32,15 +32,15 @@ const Hero = () => {
           <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold text-gray-900 mb-8 leading-tight">
             Sandhiya C V
           </h1>
-          
+
           <h2 className="text-2xl sm:text-3xl lg:text-4xl text-gray-800 mb-6 font-medium leading-relaxed fade-in-delay-1">
-            AI Scientist & Computer Vision Expert
+            Full Stack Engineer
           </h2>
-          
+
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 mb-12 font-normal leading-relaxed max-w-3xl mx-auto fade-in-delay-1">
-            AI Scientist and admirer with experience in developing agentic systems and a belief in first-principles learning, seeking opportunities to solve problems where full-stack engineering meets agentic workflows in a startup that values strong culture and innovation.
+            Disciplined and adaptable Full Stack Engineer, fascinated by the intersection of software engineering and AI. Driven to build intelligent systems that are reliable and grounded in solid engineering principles, and seeking opportunities to solve problems where full-stack engineering meets agentic workflows in a startup that values strong culture and innovation.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center fade-in-delay-2">
             <Button
               size="lg"
@@ -49,7 +49,7 @@ const Hero = () => {
             >
               <a href="#projects">View Projects</a>
             </Button>
-            
+
             <Button
               onClick={handleDownloadResume}
               size="lg"

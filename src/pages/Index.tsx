@@ -2,8 +2,6 @@ import Navigation from '../components/Navigation';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Hackathons from '../components/Hackathons';
-import TechStack from '../components/TechStack';
-import Architectures from '../components/Architectures';
 import Experience from '../components/Experience';
 import Projects from '../components/Projects';
 import Certifications from '../components/Certifications';
@@ -20,8 +18,6 @@ const Index = () => {
       <Experience />
       <Projects />
       <Hackathons />
-      <TechStack />
-      <Architectures />
       <Certifications />
       <Contact />
       <Footer />

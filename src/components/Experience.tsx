@@ -3,12 +3,21 @@ import { CalendarDays, MapPin, Briefcase } from 'lucide-react';
 
 const experiences = [
   {
+    role: 'Founding Engineer',
+    company: 'Cornet Health',
+    period: 'Nov 2025 - Present',
+    location: 'Bengaluru, India',
+    description: 'Built a high-performance image classification system for 46 classes with <500ms latency; worked closely with clients during integration, delivering beyond scope and contributing directly to revenue growth.',
+    isCurrent: true,
+    type: 'Work'
+  },
+  {
     role: 'Data Scientist',
     company: '5C Network',
-    period: 'June 2025 - Present',
+    period: 'June 2025 - Nov 2025',
     location: 'Bangalore, India',
-    description: 'Built and deployed fracture detection pipelines with cutting-edge vision frameworks and architectures, integrated expert validation and ensembling',
-    isCurrent: true,
+    description: 'Gained in-depth domain expertise in medical imaging and radiology to design clinically relevant models with secondary capture integration. Developed and deployed an AI system for predicting pathologies and generating automated radiology reports immediately after X-ray acquisition.',
+    isCurrent: false,
     type: 'Work'
   },
   {
@@ -32,7 +41,7 @@ const experiences = [
   {
     role: 'Data Science Intern',
     company: 'Halliburton',
-    period: 'April 2024 - May 2024',
+    period: 'Apr 2024 - May 2024',
     location: 'Bangalore, India',
     description: 'Developed an intelligent document querying system using RAG with graph-based retrieval for efficient information extraction from technical PDFs.',
     isCurrent: false,
@@ -70,9 +79,8 @@ const Experience = () => {
             {experiences.map((exp, index) => (
               <div key={index} className="relative flex items-start gap-6 fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 {/* Timeline dot */}
-                <div className={`w-4 h-4 rounded-full flex-shrink-0 mt-2 ${
-                  exp.isCurrent ? 'bg-blue-500' : exp.type === 'Education' ? 'bg-yellow-500' : 'bg-green-500'
-                }`} />
+                <div className={`w-4 h-4 rounded-full flex-shrink-0 mt-2 ${exp.isCurrent ? 'bg-blue-500' : exp.type === 'Education' ? 'bg-yellow-500' : 'bg-green-500'
+                  }`} />
 
                 {/* Content card */}
                 <Card className="flex-1 p-6 hover:shadow-lg transition-all duration-300 hover-lift bg-white">
@@ -88,7 +96,7 @@ const Experience = () => {
                         {exp.description}
                       </p>
                     </div>
-                    
+
                     <div className="flex flex-col items-end gap-2">
                       <div className="text-right">
                         <div className="text-sm text-muted-foreground mb-1">
@@ -98,15 +106,14 @@ const Experience = () => {
                           {exp.location}
                         </div>
                       </div>
-                      
+
                       <div className="flex gap-2">
-                        <span className={`px-3 py-1 text-xs font-medium rounded-full ${
-                          exp.type === 'Work' 
-                            ? 'bg-green-100 text-green-700' 
-                            : exp.type === 'Education'
+                        <span className={`px-3 py-1 text-xs font-medium rounded-full ${exp.type === 'Work'
+                          ? 'bg-green-100 text-green-700'
+                          : exp.type === 'Education'
                             ? 'bg-yellow-100 text-yellow-700'
                             : 'bg-blue-100 text-blue-700'
-                        }`}>
+                          }`}>
                           {exp.type}
                         </span>
                         {exp.isCurrent && (
