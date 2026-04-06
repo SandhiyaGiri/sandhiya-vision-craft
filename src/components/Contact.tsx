@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -26,7 +27,7 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: 'Please fill in all fields',
@@ -37,19 +38,29 @@ const Contact = () => {
     }
 
     setIsSubmitting(true);
-    
+
     try {
-      // In a real implementation, you would send this to your backend
-      // For now, we'll simulate the submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          title: `Message from ${formData.name}`,
+          time: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
       toast({
         title: 'Message sent successfully!',
         description: 'Thank you for reaching out. I\'ll get back to you soon.',
       });
-      
+
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
+      console.error('EmailJS error:', error);
       toast({
         title: 'Failed to send message',
         description: 'Please try again or contact me directly via email.',
@@ -95,7 +106,7 @@ const Contact = () => {
             Let's Work Together
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind or want to discuss AI opportunities? 
+            Have a project in mind or want to discuss AI opportunities?
             I'd love to hear from you.
           </p>
         </div>
@@ -106,10 +117,10 @@ const Contact = () => {
             <h3 className="text-2xl font-heading font-bold text-foreground mb-6">
               Get in Touch
             </h3>
-            
+
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              I'm always excited to collaborate on innovative AI projects, especially 
-              in healthcare and computer vision. Whether you have a specific project 
+              I'm always excited to collaborate on innovative AI projects, especially
+              in healthcare and computer vision. Whether you have a specific project
               in mind or just want to connect, feel free to reach out!
             </p>
 
@@ -146,7 +157,7 @@ const Contact = () => {
                 <MapPin className="w-5 h-5 text-accent" />
                 <div>
                   <p className="text-sm font-medium text-muted-foreground">Location</p>
-                  <p className="text-foreground">Coimbatore, Tamil Nadu, India</p>
+                  <p className="text-foreground">Bengaluru, Karnataka, India</p>
                 </div>
               </div>
             </div>
@@ -158,7 +169,7 @@ const Contact = () => {
               <h3 className="text-2xl font-heading font-bold text-foreground mb-6">
                 Send me a message
               </h3>
-              
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
@@ -185,7 +196,7 @@ const Contact = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div className="space-y-2">
                   <Label htmlFor="message">Message *</Label>
                   <Textarea
@@ -198,7 +209,7 @@ const Contact = () => {
                     required
                   />
                 </div>
-                
+
                 <Button
                   type="submit"
                   disabled={isSubmitting}

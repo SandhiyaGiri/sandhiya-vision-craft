@@ -16,8 +16,8 @@ const Hero = () => {
 
   const handleDownloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/src/assets/Sandhiya_DataScience.pdf';
-    link.download = 'Sandhiya_DataScience.pdf';
+    link.href = '/resume-sandhiya-cv.pdf';
+    link.download = 'Sandhiya_Resume.pdf';
     link.click();
   };
 

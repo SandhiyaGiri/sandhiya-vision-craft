@@ -24,7 +24,7 @@ const hackathons = [
     description: 'AI-powered communication app that bridges consumers and delivery agents through smart translation and schedule awareness.',
     details: 'Built using Google Gemini models and Agno multi-agent orchestration. Solo project with working MVP.',
     buttons: [
-      { label: 'Deck', icon: FileText, link: '/src/assets/deck/AI-Boomi-Hackathon-Delivery.pdf' },
+      { label: 'Deck', icon: FileText, link: '/deck/AI-Boomi-Hackathon-Delivery.pdf' },
       { label: 'LinkedIn Post', icon: ExternalLink, link: 'https://www.linkedin.com/posts/sandhiya-c-v_as-far-back-as-i-can-remember-ive-always-activity-7369057066868490241-Wpk9?utm_source=share&utm_medium=member_desktop&rcm=ACoAADnxq-8BZGuw77Zgd3AaHWG4D_fwwRtKxnk' }
     ]
   },
@@ -42,8 +42,8 @@ const hackathons = [
     description: 'AI-powered multi-agent platform that supports teachers in multi-grade, low-resource classrooms.',
     details: 'Generates localized content and personalized learning aids. Sparked deep interest in Agentic AI workflows.',
     buttons: [
-      { label: 'Deck', icon: FileText, link: '/src/assets/deck/Google-Agentic-AI-Sahayak.pdf' },
-      { label: 'Certificate', icon: Award, link: '/src/assets/certificates/Hack2skill-Certificate.png' }
+      { label: 'Deck', icon: FileText, link: '/deck/Google-Agentic-AI-Sahayak.pdf' },
+      { label: 'Certificate', icon: Award, link: '/certificates/Hack2skill-Certificate.png' }
     ]
   },
   {
@@ -51,7 +51,7 @@ const hackathons = [
     description: 'AI co-pilot for Managed Service Providers that automates repetitive technician workflows.',
     details: 'Built on AWS Bedrock and Agent Core. Currently shortlisted for second round.',
     buttons: [
-      { label: 'Deck', icon: FileText, link: '/src/assets/deck/Super-Hac-MSP-system.pdf' }
+      { label: 'Deck', icon: FileText, link: '/deck/Super-Hac-MSP-system.pdf' }
     ]
   }
 ];

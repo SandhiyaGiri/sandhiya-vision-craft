@@ -8,15 +8,15 @@ const Certifications = () => {
       title: "NPTEL Computer Vision",
       issuer: "National Programme on Technology Enhanced Learning",
       description: "Comprehensive course covering computer vision fundamentals, image processing, and deep learning applications",
-      pdfPath: "/src/assets/certificates/Sandhiya_Computer_Vision_NPTEL.pdf",
+      pdfPath: "/certificates/Sandhiya_Computer_Vision_NPTEL.pdf",
       icon: Award,
       color: "from-blue-500/20 to-blue-600/20"
     },
     {
       title: "NPTEL Deep Learning",
-      issuer: "National Programme on Technology Enhanced Learning", 
+      issuer: "National Programme on Technology Enhanced Learning",
       description: "Advanced deep learning concepts including neural networks, CNNs, RNNs, and modern architectures",
-      pdfPath: "/src/assets/certificates/Sandhiya_Deep_Learning_NPTEL.pdf",
+      pdfPath: "/certificates/Sandhiya_Deep_Learning_NPTEL.pdf",
       icon: Award,
       color: "from-green-500/20 to-green-600/20"
     },
@@ -24,7 +24,7 @@ const Certifications = () => {
       title: "iWE League Scholar",
       issuer: "Ananya's Goldman Sachs iWE League",
       description: "Recognition for excellence in women's entrepreneurship and technology leadership",
-      pdfPath: "/src/assets/certificates/iWE League Scholar -  SANDHIYA C V.pdf",
+      pdfPath: "/certificates/iWE League Scholar -  SANDHIYA C V.pdf",
       icon: Award,
       color: "from-purple-500/20 to-purple-600/20"
     }
