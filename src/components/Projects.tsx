@@ -220,7 +220,7 @@ const Projects = () => {
                     {project.isWebsiteOnly ? (
                       <Button
                         size="sm"
-                        className="flex-1 bg-accent hover:bg-accent-hover text-accent-foreground"
+                        className="flex-1 bg-accent text-white hover:bg-blue-700"
                         asChild
                       >
                         <a
@@ -235,7 +235,7 @@ const Projects = () => {
                     ) : project.isBlogOnly ? (
                       <Button
                         size="sm"
-                        className="flex-1 bg-accent hover:bg-accent-hover text-accent-foreground"
+                        className="flex-1 bg-accent text-white hover:bg-blue-700"
                         asChild
                       >
                         <a
@@ -259,7 +259,7 @@ const Projects = () => {
                           <Button
                             variant="outline"
                             size="sm"
-                            className="flex-1 hover:bg-accent hover:text-accent-foreground hover:border-accent"
+                            className="flex-1 hover:bg-gray-900 hover:text-white hover:border-gray-900"
                             asChild
                           >
                             <a
@@ -275,7 +275,7 @@ const Projects = () => {
                         <Button
                           variant="outline"
                           size="sm"
-                          className="flex-1 hover:bg-accent hover:text-accent-foreground hover:border-accent"
+                          className="flex-1 hover:bg-gray-900 hover:text-white hover:border-gray-900"
                           asChild
                         >
                           <a
@@ -289,7 +289,7 @@ const Projects = () => {
                         </Button>
                         <Button
                           size="sm"
-                          className="flex-1 bg-accent hover:bg-accent-hover text-accent-foreground"
+                          className="flex-1 bg-accent text-white hover:bg-blue-700"
                           asChild
                         >
                           <a href={project.demoLink || "#contact"} target={project.demoLink ? "_blank" : undefined} rel={project.demoLink ? "noopener noreferrer" : undefined}>

@@ -60,68 +60,60 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 fade-in">
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+    <section id="experience" className="py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-3xl mx-auto">
+        <div className="text-center mb-12 fade-in">
+          <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-3">
             My Path to AI
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base text-muted-foreground max-w-xl mx-auto">
             From internships to building production-ready medical AI systems, each step taught me something about building what matters.
           </p>
         </div>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-px bg-gray-300" />
+          <div className="absolute left-[7px] top-0 bottom-0 w-px bg-gray-200" />
 
-          <div className="space-y-8">
+          <div className="space-y-5">
             {experiences.map((exp, index) => (
-              <div key={index} className="relative flex items-start gap-6 fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div key={index} className="relative flex items-start gap-4 fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 {/* Timeline dot */}
-                <div className={`w-4 h-4 rounded-full flex-shrink-0 mt-2 ${exp.isCurrent ? 'bg-blue-500' : exp.type === 'Education' ? 'bg-yellow-500' : 'bg-green-500'
+                <div className={`w-3.5 h-3.5 rounded-full flex-shrink-0 mt-5 z-10 ${exp.isCurrent ? 'bg-blue-500' : exp.type === 'Education' ? 'bg-yellow-500' : 'bg-green-500'
                   }`} />
 
                 {/* Content card */}
-                <Card className="flex-1 p-6 hover:shadow-lg transition-all duration-300 hover-lift bg-white">
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                    <div className="flex-1">
-                      <h3 className="text-xl font-heading font-bold text-foreground mb-1">
+                <Card className="flex-1 p-4 hover:shadow-md transition-all duration-300 hover-lift bg-white">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1.5 sm:gap-3">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-base font-heading font-semibold text-foreground mb-0.5 leading-snug">
                         {exp.role}
                       </h3>
-                      <h4 className="text-lg font-medium text-accent mb-3">
-                        {exp.company}
+                      <h4 className="text-xs font-medium text-muted-foreground mb-2">
+                        {exp.company}{exp.location ? ` · ${exp.location}` : ''}
                       </h4>
-                      <p className="text-muted-foreground leading-relaxed">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         {exp.description}
                       </p>
                     </div>
 
-                    <div className="flex flex-col items-end gap-2">
-                      <div className="text-right">
-                        <div className="text-sm text-muted-foreground mb-1">
-                          {exp.period}
-                        </div>
-                        <div className="text-sm text-muted-foreground">
-                          {exp.location}
-                        </div>
-                      </div>
-
-                      <div className="flex gap-2">
-                        <span className={`px-3 py-1 text-xs font-medium rounded-full ${exp.type === 'Work'
-                          ? 'bg-green-100 text-green-700'
-                          : exp.type === 'Education'
-                            ? 'bg-yellow-100 text-yellow-700'
-                            : 'bg-blue-100 text-blue-700'
-                          }`}>
-                          {exp.type}
+                    <div className="flex items-center gap-1.5 flex-shrink-0 flex-wrap sm:justify-end">
+                      <span className="text-xs text-muted-foreground whitespace-nowrap">
+                        {exp.period}
+                      </span>
+                      <span className={`px-2 py-0.5 text-xs font-medium rounded-full border ${exp.type === 'Work'
+                        ? 'border-green-500 text-green-700'
+                        : exp.type === 'Education'
+                          ? 'border-yellow-500 text-yellow-700'
+                          : 'border-blue-500 text-blue-700'
+                        }`}>
+                        {exp.type}
+                      </span>
+                      {exp.isCurrent && (
+                        <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-blue-500 text-white">
+                          Current
                         </span>
-                        {exp.isCurrent && (
-                          <span className="px-3 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-700">
-                            Current
-                          </span>
-                        )}
-                      </div>
+                      )}
                     </div>
                   </div>
                 </Card>

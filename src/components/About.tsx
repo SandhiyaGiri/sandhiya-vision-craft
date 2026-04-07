@@ -7,7 +7,7 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Profile Image */}
           <div className="relative fade-in">
-            <div className="relative w-80 h-80 mx-auto lg:mx-0">
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 mx-auto lg:mx-0">
               <Card className="relative w-full h-full p-6 bg-white border-slate-200 hover:shadow-lg transition-all duration-300">
                 <div className="w-full h-full rounded-xl overflow-hidden">
                   <img
